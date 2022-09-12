@@ -1,6 +1,6 @@
-<h1>hello</h1>
+<h1>Share your tool with the community:</h1>
 
-<form action="/nutrition" method="POST">
+<form action="/nutrition/create" method="POST">
 	<label for="">Name: </label>
 	<input type="text" name="name">
 
@@ -10,8 +10,49 @@
 	<label for="">Description: </label>
 	<input type="text" name="description">
 
-	<label for="">Ratings: </label>
-	<input type="text" name="rating">
+    <div> 
+         <h2>Rating:</h2> 
+         <p class="star-rating">
+            <i class="my-star star-1" data-star="1"></i>
+            <i class="my-star star-2" data-star="2"></i>
+            <i class="my-star star-3" data-star="3"></i>
+            <i class="my-star star-4" data-star="4"></i>
+            <i class="my-star star-5" data-star="5"></i>
+            <input type="number" readonly id="output">
+        </p> 
+
+        <script> 
+             document.addEventListener('DOMContentLoaded', function(){
+                (function(){
+                    let star = document.querySelectorAll('.my-star');
+                    let i = 0;
+                    while (i < star.length){
+                        star[i].addEventListener('click', function(){
+                            let currentStar = parseInt(this.getAttribute("data-star"));
+                            document.querySelector('#output').value = currentStar;
+                            let pre = currentStar; //set the current star value
+                            while(1 <= pre){
+                                if(!document.querySelector('.star-'+pre).classList.contains('is-active')){
+                                    document.querySelector('.star-'+pre).classList.add('is-active');
+                                    }
+                                    --pre;
+                                    }
+                        let succ = currentStar+1;
+                        while(5 >= succ){
+                            if(document.querySelector('.star-'+succ).classList.contains('is-active')){
+                                document.querySelector('.star-'+succ).classList.remove('is-active');
+                                }
+                                ++succ;
+                                }
+                                })
+                                i++;
+                                }
+                        })();
+                        })
+
+                    {{!-- wie bekomme ich die Sterne Bewertung jetzt auf die anderen views? --}}
+        </script>
+    </div>
 
 	<button type="submit">Add this App</button>
 </form>

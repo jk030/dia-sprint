@@ -1,0 +1,23 @@
+<h1>What your community recommends:</h1>
+
+{{#each allAppsFromDB}}
+<div> 
+    <div> 
+        <h2>Name:</h2> 
+        <h2>{{name}}</h2>
+    </div>
+
+    <div>
+        <img src="{{imgPath}}" alt="Image for {{title}}"height="200px"></img>
+    </div>
+
+	<div>
+        <h2>Description:</h2>
+	    <h4>{{description}}</h4>
+    </div>
+    {{!-- <h6>{{owner}}</h6> --}}
+    {{!-- <h6>{{timestamps}}</h6> --}}	
+   
+</div>
+{{/each}}
+

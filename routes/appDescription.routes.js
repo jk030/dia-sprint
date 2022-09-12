@@ -1,24 +1,39 @@
 const router = require("express").Router();
 const AppDescription = require('../models/AppDescription')
 
-router.get('/nutrition', (req, res, next) => {
+
+router.get('/nutrition/create', (req, res, next) => {
 	res.render('createNutritionApp')
 })
 
-router.post('/nutrition', (req, res, next) => {
-    const {name, description, type, ratings} = req.body
+router.post('/nutrition/create', (req, res, next) => {
+    const {name, description, type, rating} = req.body
 	// create an app example  
 	// const loggedInUser = req.user.id
-	AppDescription.create({name, description, type: "nutrition",ratings}) 
-		.then( appDescription => {
-console.log(appDescription)
-			res.render('nutritionPage', {appDescription}) 
+	AppDescription
+		.create({name, description, type: "nutrition", rating}) 
+		.then(appDescription => {
+			res.render('nutritionAdd', {appDescription}) 
 		})
 		.catch(err => next(err))
 });
 
+router.get('/nutrition', (req, res, next) => {
+	// const queryAllApps = req.query.q
+	// console.log(queryAllApps)
+	AppDescription
+	.find()
+	.then(allAppsFromDB => {
+	console.log(allAppsFromDB)
+		res.render('nutritionOverview', {allAppsFromDB})
+	})
+	.catch(err => next(err))
+})
+
 module.exports = router;
  
+
+
 
 // router.post('/nutrition', (req, res, next) => {
 //     const {imgName, imgPath, title, description, owner, timestamps, ratings} = req.body
