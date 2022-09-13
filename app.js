@@ -21,7 +21,9 @@ require("./config")(app);
 const capitalized = require("./utils/capitalized");
 const projectName = "dia-sprint";
 
+//setting up a global variable 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
