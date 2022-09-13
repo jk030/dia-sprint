@@ -1,0 +1,19 @@
+<h1>Edit this app ✏️</h1>
+
+{{!-- app.id --> is app the key from nurtition/edit ? --}}
+
+<form action="/nutrition/create" method="POST" enctype="multipart/form-data">
+	<label for="">Name: </label>
+	<input type="text" name="name" value="{{app.name}}">
+	<label for="">Image: </label>
+	<input type="file" name="appImage" value="{{app.imageUrl}}">
+
+	<label for="">Description: </label>
+	<input type="text" name="description" value="{{app.description}}">
+
+	<label for="">Rating: </label>
+	<input type="number" name="rating" value="{{app.rating}}">
+
+	<button type="sumbmit">Update</button>
+    <button type="submit">Save changes</button>
+</form>

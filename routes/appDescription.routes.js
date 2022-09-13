@@ -20,6 +20,35 @@ console.log(req.body)
 		.catch(err => next(err))
 });
 
+
+router.get('/nutrition/edit/:id', (req, res, next) => {
+	AppDescription
+		.findById(req.params._id)
+		.then(appFromDB => {
+			res.render('nutritionEdit', { app: appFromDB })
+		})
+		.catch(err => next(err))
+});
+
+
+router.post('/nutrition/edit/:id', (req, res, next) => {
+	const { imageUrl, name, description, type, rating} = req.body
+	AppDescription
+	.findByIdAndUpdate(req.params.id, {
+		imageUrl,
+		name,
+		description, 
+		type, 
+		rating,
+	})
+		.then(() => {
+			res.redirect(`/nutrition/create`) 
+			//${req.params.id}
+		})
+		.catch(err => next(err))
+});
+
+
 router.get('/nutrition', (req, res, next) => {
 	// const queryAllApps = req.query.q
 	// console.log(queryAllApps)

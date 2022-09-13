@@ -37,7 +37,7 @@
             document.getElementById("test").innerText = "hallo"
 
             {{allAppsFromDB}}.forEach(app => { 
-                console.log("this is the app" {{allAppsFromDB}})
+                console.log("this is the app" `{{allAppsFromDB}}`)
                 (let i = 1; i <= 5; i++) {
                 if(i <= app.rating) {
                   document.querySelector('.star-'+ (i)).classList.add('is-active')
