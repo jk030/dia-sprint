@@ -1,3 +1,23 @@
+<nav>
+        <div id="Status">
+          {{#if user}}
+          <h2>{{username}} You are logged in </h2>
+          <button>
+          <a href="/profile">See your profile</a>
+          </button>
+          {{else}}
+              <button>
+              <a href="/auth/login">log in here</a>
+              </button>
+
+              <button>
+              <a href="/auth/signup">Sign up here</a>
+              </button>
+
+          {{/if}}
+        </div>
+</nav>
+
 <h1>Share your tool with the community:</h1>
 
 <form action="/nutrition/create" method="POST" enctype="multipart/form-data">

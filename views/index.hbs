@@ -1,2 +1,32 @@
+<nav>
+        <div id="Status">
+          {{#if user}}
+          <h2>{{user.username}} You are logged in </h2>
+          <button>
+          <a href="/profile">See your profile</a>
+          </button>
+          <button>
+          <a href="/auth/logout">logout </a>
+          </button>
+
+          {{else}}
+              <button>
+              <a href="/auth/login">log in here</a>
+              </button>
+
+              <button>
+              <a href="/auth/signup">Sign up here</a>
+              </button>
+          {{/if}}
+        </div>
+</nav>
+
 <h1>{{appTitle}} 🚀</h1>
-<p>Welcome Ironhacker!</p>
+<p></p>
+
+
+
+        {{!-- <a href="/beers"> Beers  </a> &nbsp;
+        <a href="/random-beer"> Random Beer  </a> --}}
+
+
