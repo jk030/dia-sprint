@@ -12,6 +12,16 @@ const userSchema = new Schema(
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
+  },
+  {
+    data:{
+      name: String,
+      lastName: String,
+      nationality: String,
+      birthday: Date,
+      ailement: String,
+      pictureUrl: String,
+    }
   }
 );
 
