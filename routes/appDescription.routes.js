@@ -1,17 +1,19 @@
 const router = require("express").Router();
 const AppDescription = require('../models/AppDescription')
-
+const uploader = require('../config/cloudinary')
 
 router.get('/nutrition/create', (req, res, next) => {
 	res.render('createNutritionApp')
 })
 
-router.post('/nutrition/create', (req, res, next) => {
-    const {name, description, type, rating} = req.body
-	// create an app example  
+router.post('/nutrition/create', uploader.single('appImage'), (req, res, next) => {
+  	// console.log(req.file)
+	  const {name, description, type, rating} = req.body
+	  const imageUrl = req.file.path
+console.log(req.body)
 	// const loggedInUser = req.user.id
 	AppDescription
-		.create({name, description, type: "nutrition", rating}) 
+		.create({imageUrl, name, description, type: "nutrition", rating}) 
 		.then(appDescription => {
 			res.render('nutritionAdd', {appDescription}) 
 		})
@@ -29,6 +31,7 @@ router.get('/nutrition', (req, res, next) => {
 	})
 	.catch(err => next(err))
 })
+
 
 module.exports = router;
  

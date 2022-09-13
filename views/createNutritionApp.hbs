@@ -1,25 +1,29 @@
 <h1>Share your tool with the community:</h1>
 
-<form action="/nutrition/create" method="POST">
+<form action="/nutrition/create" method="POST" enctype="multipart/form-data">
 	<label for="">Name: </label>
 	<input type="text" name="name">
 
     <label for="">Image: </label>
-    <input type="file" name="Image">
+    <input type="file" name="appImage">
 
 	<label for="">Description: </label>
 	<input type="text" name="description">
 
-    <div> 
+
          <h2>Rating:</h2> 
          <p class="star-rating">
-            <i class="my-star star-1" data-star="1"></i>
-            <i class="my-star star-2" data-star="2"></i>
-            <i class="my-star star-3" data-star="3"></i>
-            <i class="my-star star-4" data-star="4"></i>
-            <i class="my-star star-5" data-star="5"></i>
-            <input type="number" readonly id="output">
+            <span class="my-star star-1" data-star="1"></span>
+            <span class="my-star star-2" data-star="2"></span>
+            <span class="my-star star-3" data-star="3"></span>
+            <span class="my-star star-4" data-star="4"></span>
+            <span class="my-star star-5" data-star="5"></span>
+            <input type="hidden" name="rating" readonly id="output"> 
+
         </p> 
+
+	<button type="submit">Add this App</button>
+</form>
 
         <script> 
              document.addEventListener('DOMContentLoaded', function(){
@@ -49,11 +53,9 @@
                                 }
                         })();
                         })
-
-                    {{!-- wie bekomme ich die Sterne Bewertung jetzt auf die anderen views? --}}
+                    {{!-- wie bekomme ich die Sterne Bewertung jetzt auf die anderen views? --}}  
         </script>
-    </div>
 
-	<button type="submit">Add this App</button>
-</form>
+
+
 

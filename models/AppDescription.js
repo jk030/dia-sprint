@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const appDescriptionSchema = new Schema({
-	// imgName: String,
-	// imgPath: String,
+	imageUrl: String, 
     type: {
         type: String, 
         enum: ['nutrition', 'exercise'], 
@@ -17,7 +16,7 @@ const appDescriptionSchema = new Schema({
     // timestamps: true,
     rating:{
         type: Number, 
-        enum: [1, 2, 3, 4, 5], 
+        enum: [1, 2, 3, 4, 5],  
     }
 })
    
