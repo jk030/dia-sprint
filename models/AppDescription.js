@@ -7,7 +7,10 @@ const appDescriptionSchema = new Schema({
         type: String, 
         enum: ['nutrition', 'exercise'], 
     }, 
-    name: String, 
+    name:{
+        type: String, 
+        unique: true 
+    }, 
     description: String, 
 	owner: {
 		type: Schema.Types.ObjectId,
