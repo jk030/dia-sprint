@@ -9,11 +9,16 @@ require("./db");
 // https://www.npmjs.com/package/express
 const express = require("express");
 
+const methodOverride = require('method-override')
+
+
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 
 const app = express();
+
+app.use(methodOverride('_method'))
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);

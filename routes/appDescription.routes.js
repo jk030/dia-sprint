@@ -2,6 +2,7 @@ const router = require("express").Router();
 const AppDescription = require('../models/AppDescription')
 const uploader = require('../config/cloudinary')
 
+
 router.get('/nutrition/create', (req, res, next) => {
 	res.render('createNutritionApp')
 })
@@ -10,26 +11,35 @@ router.post('/nutrition/create', uploader.single('appImage'), (req, res, next) =
   	// console.log(req.file)
 	  const {name, description, type, rating} = req.body
 	  const imageUrl = req.file.path
-console.log(req.body)
-	// const loggedInUser = req.user.id
+	  console.log(req.body)
+		  // const loggedInUser = req.user.id
+
+	AppDescription
+		.findOne({ name: name })
+		.then(appNameFromDB => {
+			if (appNameFromDB !== null) {
+				res.render('createNutritionApp', { message: 'Someone already recommended that App!'})
+			}
+			else {
 	AppDescription
 		.create({imageUrl, name, description, type: "nutrition", rating}) 
 		.then(appDescription => {
 			res.render('nutritionAdd', {appDescription}) 
 		})
 		.catch(err => next(err))
+	}
 });
+})
 
 
 router.get('/nutrition/edit/:id', (req, res, next) => {
 	AppDescription
-		.findById(req.params._id)
+		.findById(req.params.id)
 		.then(appFromDB => {
-			res.render('nutritionEdit', { app: appFromDB })
+			res.render('nutritionEdit', {app: appFromDB})
 		})
 		.catch(err => next(err))
 });
-
 
 router.post('/nutrition/edit/:id', (req, res, next) => {
 	const { imageUrl, name, description, type, rating} = req.body
