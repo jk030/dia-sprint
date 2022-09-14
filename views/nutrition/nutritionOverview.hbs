@@ -31,21 +31,22 @@
             <input type="hidden" name="rating" readonly id="output">
         </p> 
   </div>
+  
 {{/each}}
 
-        <script> 
-            document.getElementById("test").innerText = "hallo"
-
-            {{allAppsFromDB}}.forEach(app => { 
-                console.log("this is the app" `{{allAppsFromDB}}`)
+        <script>   
+            JSON.stringify(allAppsFromDB)  
+            {{{allAppsFromDB}}}.forEach(app => { 
+                console.log('thats the app:' app)
                 (let i = 1; i <= 5; i++) {
                 if(i <= app.rating) {
                   document.querySelector('.star-'+ (i)).classList.add('is-active')
                 }
             }
         })
-       
+
         </script>
+    
 
 
 

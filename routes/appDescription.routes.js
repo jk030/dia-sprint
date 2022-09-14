@@ -4,7 +4,7 @@ const uploader = require('../config/cloudinary')
 
 
 router.get('/nutrition/create', (req, res, next) => {
-	res.render('createNutritionApp')
+	res.render('nutrition/createNutritionApp')
 })
 
 router.post('/nutrition/create', uploader.single('appImage'), (req, res, next) => {
@@ -18,13 +18,13 @@ router.post('/nutrition/create', uploader.single('appImage'), (req, res, next) =
 		.findOne({ name: name })
 		.then(appNameFromDB => {
 			if (appNameFromDB !== null) {
-				res.render('createNutritionApp', { message: 'Someone already recommended that App!'})
+				res.render('nutrition/createNutritionApp', { message: 'Someone already recommended that App!'})
 			}
 			else {
 	AppDescription
 		.create({imageUrl, name, description, type: "nutrition", rating}) 
 		.then(appDescription => {
-			res.render('nutritionAdd', {appDescription}) 
+			res.render('nutrition/nutritionAdd', {appDescription}) 
 		})
 		.catch(err => next(err))
 	}
@@ -36,7 +36,7 @@ router.get('/nutrition/edit/:id', (req, res, next) => {
 	AppDescription
 		.findById(req.params.id)
 		.then(appFromDB => {
-			res.render('nutritionEdit', {app: appFromDB})
+			res.render('nutrition/nutritionEdit', {app: appFromDB})
 		})
 		.catch(err => next(err))
 });
@@ -66,7 +66,7 @@ router.get('/nutrition', (req, res, next) => {
 	.find()
 	.then(allAppsFromDB => {
 	console.log(allAppsFromDB)
-		res.render('nutritionOverview', {allAppsFromDB})
+		res.render('nutrition/nutritionOverview', {allAppsFromDB})
 	})
 	.catch(err => next(err))
 })

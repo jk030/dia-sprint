@@ -1,6 +1,9 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #FBE0C3;
+
 }
 
 a {
@@ -8,9 +11,14 @@ a {
 }
 
 h1 {
-  color: 15px;
+font-weight: 700;
+  color: #344648;
 }
 
+h2{
+  color: #344648;
+  font-weight: 500;
+}
 .star-rating{
   color: #bebebe;
   font-size:2em;
