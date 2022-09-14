@@ -17,8 +17,8 @@ const userSchema = new Schema(
     data:{
       name: String,
       lastName: String,
-      nationality: String,
-      birthday: Date,
+      city: String,
+      age: Date,
       ailement: String,
       pictureUrl: String,
     }

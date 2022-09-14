@@ -2,7 +2,14 @@ const router = require("express").Router();
 const AppDescription = require('../models/AppDescription')
 const uploader = require('../config/cloudinary')
 
-router.get('/nutrition/create', (req, res, next) => {
+
+/// -----> connection to the user und session stuff
+//const User = require("../models/User.model");
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
+const { Router } = require("express");
+
+router.get('/nutrition/create',isLoggedIn, (req, res, next) => {
 	res.render('createNutritionApp')
 })
 
@@ -52,11 +59,12 @@ router.post('/nutrition/edit/:id', (req, res, next) => {
 router.get('/nutrition', (req, res, next) => {
 	// const queryAllApps = req.query.q
 	// console.log(queryAllApps)
+	res.render('nutritionOverview', {user:req.session.user})
 	AppDescription
 	.find()
 	.then(allAppsFromDB => {
 	console.log(allAppsFromDB)
-		res.render('nutritionOverview', {allAppsFromDB})
+		res.render('nutritionOverview', {allAppsFromDB} )
 	})
 	.catch(err => next(err))
 })
