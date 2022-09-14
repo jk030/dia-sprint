@@ -59,7 +59,7 @@ router.post('/nutrition/edit/:id', isLoggedIn, (req, res, next) => {
 router.get('/nutrition', (req, res, next) => {
 	// const queryAllApps = req.query.q
 	// console.log(queryAllApps)
-	res.render('nutritionOverview', {user:req.session.user})
+	//res.render('nutritionOverview', {user:req.session.user})
 	AppDescription
 	.find()
 	.then(allAppsFromDB => {
