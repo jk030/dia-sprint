@@ -16,13 +16,33 @@ const appDescriptionSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'User'
 	},
-    // timestamps: true,
+    // 
     rating:{
         type: Number, 
         enum: [1, 2, 3, 4, 5],  
-    }
+    },
+
 })
    
+const userComment= new Schema({
+    comment: String, 
+    userRating: {
+        type: Number, 
+        enum: [1, 2, 3, 4, 5]
+    }, 
+    user:{
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
+    rating: Number,
+	reviews: [{
+		user: String,
+		text: String
+	}], 
+})
+
+const UserComment = mongoose.model('UserComment', userComment);
+module.exports = UserComment;
 
 const AppDescription = mongoose.model('AppDescription', appDescriptionSchema);
 module.exports = AppDescription;
