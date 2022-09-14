@@ -28,7 +28,7 @@ console.log(req.body)
 });
 
 
-router.get('/nutrition/edit/:id', (req, res, next) => {
+router.get('/nutrition/edit/:id',isLoggedIn, (req, res, next) => {
 	AppDescription
 		.findById(req.params._id)
 		.then(appFromDB => {
@@ -38,7 +38,7 @@ router.get('/nutrition/edit/:id', (req, res, next) => {
 });
 
 
-router.post('/nutrition/edit/:id', (req, res, next) => {
+router.post('/nutrition/edit/:id', isLoggedIn, (req, res, next) => {
 	const { imageUrl, name, description, type, rating} = req.body
 	AppDescription
 	.findByIdAndUpdate(req.params.id, {
