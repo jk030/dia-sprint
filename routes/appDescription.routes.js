@@ -128,13 +128,16 @@ router.post('/nutrition/appReviews', (req, res, next) => {
 
 router.get("/nutrition", (req, res, next) => {
   // const queryAllApps = req.query.q
-  // console.log(queryAllApps)
+  // console.log(queryAllApps) 
   AppDescription.find()
     .then((allAppsFromDB) => {
-      console.log(allAppsFromDB);
-      res.render("nutrition/nutritionOverview", { allAppsFromDB });
+		let allAppsFromDBString = JSON.stringify(allAppsFromDB) 
+      res.render("nutrition/nutritionOverview", { allAppsFromDB, allAppsFromDBString});
     })
     .catch((err) => next(err));
+
+
+
 });
 
 

@@ -1,32 +1,9 @@
-<nav>
-        <div id="Status">
-          {{#if user}}
-          <h2>{{user.username}} You are logged in </h2>
-          <button>
-          <a href="/profile">See your profile</a>
-          </button>
-          <button>
-          <a href="/auth/logout">logout </a>
-          </button>
 
-          {{else}}
-              <button>
-              <a href="/auth/login">log in here</a>
-              </button>
+<section class="headline"> 
+<h1 id="headline">What your community recommends:</h1>
+</section>
 
-              <button>
-              <a href="/auth/signup">Sign up here</a>
-              </button>
-          {{/if}}
 
-            <button>
-              <a href="/nutrition/create">create your own post </a>
-              </button>
-
-        </div>
-</nav>
-
-<h1>What your community recommends:</h1>
 
 {{#each allAppsFromDB}}
 
@@ -47,7 +24,7 @@
                 <span class="my-star star-5" data-star="5"></span>
                 <input type="hidden" name="rating" readonly id="output">
             </p> 
-             <a href="nutrition/appReviews/{{allAppsFromDB._id}}">See all the reviews</a>
+             <a class="nutritionReviews" href="nutrition/appReviews/{{allAppsFromDB._id}}"> &#10150 See all the reviews</a>
     </div>
 
 
@@ -60,28 +37,21 @@
 {{/each}}
 
 
-    <div class="navigationBottom">
-       <div class="navigationCenter"> <button><a href="/"> &#10150 Go back to start</a></button> </div>
-       <div class="navigationCenter"> <button><a href="/profile"> &#10150 Go to your Profile</a></button></div>
-        <div class="navigationCenter"> <button><a href="/nutrition/create"> &#10150 Share what help you!</a></button></div>
-    </div>
-
-
-
 
         <script>   
-            JSON.stringify(allAppsFromDB)  
-            {{{allAppsFromDB}}}.forEach(app => { 
-                console.log('thats the app:' app)
-                (let i = 1; i <= 5; i++) {
-                if(i <= app.rating) {
-                  document.querySelector('.star-'+ (i)).classList.add('is-active')
-                }
-            }
-        })
-
+                 let jsonObj = JSON.parse{{{allAppsFromDBString}}}
+            jsonObj.forEach(app => { 
+                console.log('thats the app:' app)})
         </script>
     
 
-
- 
+{{!-- 
+ {{{allAppsFromDBString}}}.forEach(app => { 
+                console.log('thats the app:' app)
+                {{!-- (let i = 1; i <= 5; i++) {
+                if(i <= app.rating) {
+                  document.querySelector('.star-'+ (i)).classList.add('is-active')
+                } --}}
+            }
+        )
+  --}}

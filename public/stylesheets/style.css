@@ -2,15 +2,75 @@ body {
   padding: 50px;
   font: 14px;
   font-family: 'Montserrat', sans-serif;
-  background-color: #E2C2B3;
-
+  background-image: url("images/734349-200.png");
+  background-color: #FDF8F5;
 }
 
-a {
-  color: #00b7ff;
+.navTop{
+  color: #344648 ;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  padding-left: 250px;
+  text-decoration: underline;
 }
 
+.navbar{
+  float: left;
+  display: block;
+  background-color: #DADED4;
+  text-align: center;
+  padding: 14px 200px;
+  margin-left: 80px;
+  text-decoration: none;
+}
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  display: block;
+  color:#FFFFFF;
+  text-align: center;
+  font-weight: 500;
+  padding: 14px 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+
+.navbar a:hover {
+  background-color: #A3BCB6;
+  color: #344648;
+}
+
+.headline{
+  padding: 10px;
+  background: #FDF8F5;
+  height: 80px;
+  border-bottom: 2px solid #344648;
+  letter-spacing: 5px; 
+}
+
+.createNewApp{
+  padding: 100px;
+  margin-left: 400px;
+  justify-content: center;
+  align-content: center;
+}
+.label{
+  height: 40px;
+  font-size: 22px;
+  display: block;
+  font-weight: 500;
+  color: #344648;
+}
+
+.inputLongText{
+  width: 400px;
+  height:150px;
+}
 h1 {
+text-align: center;
 font-weight: 500;
 font-size: 50px;
 color: #344648;
@@ -20,22 +80,22 @@ display: flex;
 }
 
 h2{
-  color: #E2C2B3;
+  color: #344648;
   font-weight: 500;
 }
 
 h4{
-  color: #FBE0C3;
+  color: #344648;
   font-weight: 500;
 }
 
 h6{
-  color: #FBE0C3;
+  color: #344648;
   font-weight: 500;
 }
 
 h8{
-  color: #FBE0C3;
+  color: #344648;
   font-weight: 500;
 }
 
@@ -72,12 +132,15 @@ h8{
   flex-direction: column;
   margin: 80px 50px 30px 50px;
   padding: 50px 10px 50px 50px;
-  background-color: rgba(64,50,52,0.8);
+  background-color: rgba(226,194,179);
 }
 
+.nutritionReviews{
+  color: #344648; 
+}
 .appDescription{
   font-size: 10px;
-  color: #FBE0C3;
+  color: #344648; 
 }
 
 /* .navigationBottom{
@@ -91,13 +154,13 @@ h8{
   left: 50%;
 } */
 
-.navigationCenter{
+/* .navigationCenter{
   margin: 0;
   top: 50%;
   left: 50%;
   justify-content: space-between;
   float: left;
-}
+} */
 
 /* *{
   margin: 0;

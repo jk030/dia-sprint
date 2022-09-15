@@ -12,14 +12,42 @@
 </style>
   </head>
 
-  <body>
+<header>
+<nav>
+    <div id="Status">
+    <ul>
+        {{#if user}} 
+        <h2>{{user.username}} You are logged in </h2>        
+        <span><a class="navTop" href="/profile">Profile</a></span>
+         <span><a class="navTop" href="/auth/logout">logout </a></span>
+        {{else}}
+         <span><a class="navTop"  href="/auth/login">Login</a></span>
+        <span><a class="navTop" href="/auth/signup">Sign up</a></span> 
+        {{/if}}
+        <span><a class="navTop" href="/nutrition/create">Create your own post </a></span>
+    </ul>
+  
+    </div>
+</nav>
+</header>
 
+  <body>
 
 
 
     {{{body}}}
 
     <script src="/js/script.js"></script>
+
+
+
+<div class="navbar">
+        <a href="/" class="active"> &#10150 Go back to start</a>
+        <a href="/profile"> &#10150 Go to your Profile</a>
+        <a href="/nutrition"> &#10150 See what your coummunity recommends</a>
+</div>
+
+
   </body>
 
 </html>
