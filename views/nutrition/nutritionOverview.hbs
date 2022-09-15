@@ -36,7 +36,7 @@
             <img src="{{imageUrl}}" alt="Image for {{title}}"height="200px" width="200px"></img>
             <h6>Description:</h6>
 	        <artical class="appDescription">{{description}}</artical>
-
+           
 
              <h6>Rating:</h6>
             <p class="star-rating">
@@ -47,8 +47,10 @@
                 <span class="my-star star-5" data-star="5"></span>
                 <input type="hidden" name="rating" readonly id="output">
             </p> 
+             <a href="nutrition/appReviews/{{allAppsFromDB._id}}">See all the reviews</a>
     </div>
-  <a href="/nutrition/appReviews/{{allAppsFromDB._id}}">See all the reviews</a>
+
+
 
     {{!-- <h6>{{owner}}</h6> --}}
     {{!-- <h6>{{timestamps}}</h6> --}}	

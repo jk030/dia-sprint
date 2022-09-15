@@ -12,9 +12,28 @@
 {{/if}} --}}
 
 <div>hey {{userFromDB.username}}, leave a review:</div> 
-<form action="/nutrition/appReviews/{{appFromDB._id}}" method="POST">
+
+<h1> app : {{app.name}}</h1>
+
+<h1> reviews of other users: {{appReview.name}}</h1>
+
+<h1>{{appReview.text}}</h1>
+
+<form action="/nutrition/appReviews" method="POST">
 	
 	<label for="">Text: </label>
 	<input type="text" name="text">	
+	<label for="">Rating: </label>
+	<input type="number" name="rating" required>
 	<button type="submit">Add this review</button>
 </form>
+
+
+{{#if appReview}}
+	{{#each reviews}}
+		<div>
+			<p>{{text}}</p>
+			<p>Added by: {{user}}</p>
+		</div>
+	{{/each}}
+{{/if}}

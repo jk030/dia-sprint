@@ -48,6 +48,7 @@ router.get('/nutrition/edit/:id',isLoggedIn, (req, res, next) => {
 	AppDescription
 		.findById(req.params.id)
 		.then(appFromDB => {
+			console.log(appFromDB)
 			res.render('nutrition/nutritionEdit', { app: appFromDB })
 		})
 		.catch(err => next(err))
@@ -73,32 +74,55 @@ router.post('/nutrition/edit/:id', isLoggedIn, (req, res, next) => {
 })
 
 
-router.get("/nutrition/appReviews/:id", (req, res, next) => {
-
-	AppDescription.findById(req.params.id)
+router.get('/nutrition/appReviews', (req, res, next) => {
+	AppDescription
+	.findById(req.params.id)
     .then(appFromDB => {
 		console.log(appFromDB)
-      res.render("nutrition/appReviews", { app: appFromDB  });
+      res.render("nutrition/appReviews", {app: appFromDB});
     })
     .catch((err) => next(err));
 });
 
 
+// --> vorherige post route --> die hatten wir zusammen erstellt 
 
-router.post('/nutrition/appReviews/:id', (req, res, next) => {
+// router.post('/nutrition/appReviews', (req, res, next) => {
+// 	const { user, text, userRating } = req.body
+// 	const appId = req.params.id
+// 	AppDescription
+// 	.findByIdAndUpdate(appId,
+// 		{ $push: { reviews: { user: user, text: text, userRating: userRating} } } 
+// 		)
+// 	.then(() => {
+// 		res.redirect("/nutrition/appReviews");
+// 	})
+// 	.catch((err) => next(err));
+
+// });
+
+
+
+// jans post route --> habe die mal ausprobiert 
+router.post('/nutrition/appReviews', (req, res, next) => {
 	// console.log(req.)
 	const { user, text, userRating } = req.body
 	UserComment
-	.create(createdReview, {
+	.create({
 			user,
 			text,
-			userRating,
-		})
-	.then(userReview=>{
-	console.log(userReview)
-	res.redirect(nutrition/appReviews)
+			userRating})
+	.then((appReview) => {
+		res.render("nutrition/appReviews", { appReview: appReview });
 	})
+	.catch((err) => next(err));
+
 });
+
+
+
+
+
 
 
 
@@ -114,27 +138,6 @@ router.get("/nutrition", (req, res, next) => {
 });
 
 
-
-
-
-
-
-
-
-
-// router.post('/nutrition/reviews/:id', (req, res, next) => {
-// 	const { user, text } = req.body
-// 	const appId = req.params.id
-
-// 	AppDescription
-// 	.findByIdAndUpdate(appId,
-// 		{ $push: { reviews: { user: user, text: text } } }
-// 	)
-// 		.then(() => {
-// 			res.redirect(`nutrition/reviews`)
-// 		})
-// 		.catch(err => next(err))
-// });
 
 
 

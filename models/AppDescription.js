@@ -21,7 +21,11 @@ const appDescriptionSchema = new Schema({
         type: Number, 
         enum: [1, 2, 3, 4, 5],  
     },
-
+    reviews: [{
+		user: String,
+		text: String,
+        rating: Number
+	}]
 })
    
 
