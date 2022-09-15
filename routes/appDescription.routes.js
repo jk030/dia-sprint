@@ -60,6 +60,15 @@ router.post("/nutrition/edit/:id", (req, res, next) => {
     .catch((err) => next(err));
 });
 
+router.get('/books/delete/:id', (req, res, next) => {
+	Book.findByIdAndDelete(req.params.id)
+		.then(() => {
+			res.redirect('/nutrition')
+		})
+		.catch(err => next(err))
+});
+
+
 router.get("/nutrition", (req, res, next) => {
   // const queryAllApps = req.query.q
   // console.log(queryAllApps)
@@ -74,6 +83,7 @@ router.get("/nutrition", (req, res, next) => {
 // router.get("/nutrition/reviews/:id", (req, res, next) => {
 // 	AppDescription.findById(req.params.id)
 //     .then((appFromDB) => {
+// 		console.log(appFromDB)
 //       res.render("nutrition/nutritionReview", { app: appFromDB });
 //     })
 //     .catch((err) => next(err));
