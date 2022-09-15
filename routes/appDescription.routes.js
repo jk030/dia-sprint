@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const AppDescription = require('../models/AppDescription')
 const uploader = require('../config/cloudinary')
-const UserComment = require("../models/AppDescription"); 
+const UserComment = require("../models/reviewModel")
+const User = require("../models/User.model");
 
 /// -----> connection to the user und session stuff
-//const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const { Router } = require("express");
@@ -46,7 +46,7 @@ router.post( "/nutrition/create", uploader.single("appImage"), (req, res, next) 
 
 router.get('/nutrition/edit/:id',isLoggedIn, (req, res, next) => {
 	AppDescription
-		.findById(req.params._id)
+		.findById(req.params.id)
 		.then(appFromDB => {
 			res.render('nutrition/nutritionEdit', { app: appFromDB })
 		})
@@ -72,6 +72,36 @@ router.post('/nutrition/edit/:id', isLoggedIn, (req, res, next) => {
 		.catch(err => next(err))
 })
 
+
+router.get("/nutrition/appReviews/:id", (req, res, next) => {
+
+	AppDescription.findById(req.params.id)
+    .then(appFromDB => {
+		console.log(appFromDB)
+      res.render("nutrition/appReviews", { app: appFromDB  });
+    })
+    .catch((err) => next(err));
+});
+
+
+
+router.post('/nutrition/appReviews/:id', (req, res, next) => {
+	// console.log(req.)
+	const { user, text, userRating } = req.body
+	UserComment
+	.create(createdReview, {
+			user,
+			text,
+			userRating,
+		})
+	.then(userReview=>{
+	console.log(userReview)
+	res.redirect(nutrition/appReviews)
+	})
+});
+
+
+
 router.get("/nutrition", (req, res, next) => {
   // const queryAllApps = req.query.q
   // console.log(queryAllApps)
@@ -83,25 +113,10 @@ router.get("/nutrition", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-// router.get("/nutrition/reviews/:id", (req, res, next) => {
-// 	AppDescription.findById(req.params.id)
-//     .then((appFromDB) => {
-//       res.render("nutrition/nutritionReview", { app: appFromDB });
-//     })
-//     .catch((err) => next(err));
-// });
 
 
 
-// router.post('/nutrition/reviews/:id', (req, res, next) => {
-// 	const { user, text } = req.body
-	
-// 	UserComment
-// 	.create(createdReview => {
-// 	console.log(createdReview)
-// 	res.render('nutrition/nutritionReview', { app: appFromDb })
-// })
-// });
+
 
 
 
