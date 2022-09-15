@@ -1,0 +1,35 @@
+<nav>
+        <div id="Status">
+          <h2>{{profileFromDB.username}} You are logged in </h2>
+            <button>
+                <a href="/auth/logout">logout </a>
+            </button>
+            <button>
+                <a href="/profile"> All done ? back to your new Profile</a>
+            </button>
+        </div>
+</nav>
+
+{{!-- add a profile image on top of form that shows what was the profile pic before dann brauchst du auch ein reload page button  --}}
+
+<form action="/profile/edit" method="POST" >
+	<label for="">Name: </label>
+	<input type="text" name="name"  value="{{profileFromDB.name}}">
+
+    <label for="">Last Name: </label>
+	<input type="text" name="lastName" value="{{profileFromDB.lastName}}">
+
+    <label for="">what city are you from ?: </label>
+	<input type="text" name="city" value="{{profileFromDB.city}}">
+
+     <label for="">what is your ailment?: </label>
+	<input type="text" name="ailment" value="{{profileFromDB.ailment}}">
+
+     <label for="">how old are you?: </label>
+	<input type="text" name="age" value="{{profileFromDB.age}}">
+
+    <button type="submit">Save changes</button> 
+</form>
+
+{{!-- here a logout button  --}}
+

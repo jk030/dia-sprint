@@ -8,21 +8,18 @@ const userSchema = new Schema(
       unique: true 
     },
     password: String,
+    name: String,
+    lastName: String,
+    city: String,
+    age: Number,
+    ailment: String,
+    pictureUrl: String,
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   },
-  {
-    data:{
-      name: String,
-      lastName: String,
-      nationality: String,
-      birthday: Date,
-      ailement: String,
-      pictureUrl: String,
-    }
-  }
+ 
 );
 
 const User = model("User", userSchema);

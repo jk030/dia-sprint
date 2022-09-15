@@ -1,9 +1,40 @@
-<h2> Hey {{user.username}} !</h2>
-<p></p>
-<p></p>
+<nav>
+        <div id="Status">
+          <h2>{{profileFromDB.username}} You are logged in </h2>
+            <button>
+                <a href="/auth/logout">logout </a>
+            </button>
+            <button>
+                <a href="/profile/edit"> Edit you profile</a>
+            </button>
+            <button>
+              <a href="/nutrition">User recommended Apps</a>
+            </button>
+        </div>
+</nav>
+
+<h2> Hey {{profileFromDB.username}} !</h2>
+
+<h3>Look at that nice profile you have 😮</h3>
+<ul> 
+    <img >
+    <li>Name: {{profileFromDB.name}} </li>
+    <li>Name: {{profileFromDB.lastName}} </li>
+    <li>Name: {{profileFromDB.city}} </li>
+    <li>Name: {{profileFromDB.age}} </li>
+    <li>Name: {{profileFromDB.ailment}} </li>
+
+</ul>
+
+{{#if message}}
+	<h3>{{message}}</h3>
+{{/if}}
+
+<h3>This is you aktivity 👐</h3>
+
+
+
+
 
 {{!-- here a logout button  --}}
 
-<button>
-<a href="/profile">Reload the page</a>
-</button>

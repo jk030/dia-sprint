@@ -1,11 +1,18 @@
 const router = require("express").Router();
-const AppDescription = require("../models/AppDescription");
-const uploader = require("../config/cloudinary");
+const AppDescription = require('../models/AppDescription')
+const uploader = require('../config/cloudinary')
 const UserComment = require("../models/AppDescription"); 
 
-router.get("/nutrition/create", (req, res, next) => {
-  res.render("nutrition/createNutritionApp");
-});
+/// -----> connection to the user und session stuff
+//const User = require("../models/User.model");
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
+const { Router } = require("express");
+
+router.get('/nutrition/create',isLoggedIn, (req, res, next) => {
+	res.render('nutrition/createNutritionApp')
+})
+
 
 router.post( "/nutrition/create", uploader.single("appImage"), (req, res, next) => {
     // console.log(req.file)
@@ -36,29 +43,34 @@ router.post( "/nutrition/create", uploader.single("appImage"), (req, res, next) 
   }
 );
 
-router.get("/nutrition/edit/:id", (req, res, next) => {
-  AppDescription.findById(req.params.id)
-    .then((appFromDB) => {
-      res.render("nutrition/nutritionEdit", { app: appFromDB });
-    })
-    .catch((err) => next(err));
+
+router.get('/nutrition/edit/:id',isLoggedIn, (req, res, next) => {
+	AppDescription
+		.findById(req.params._id)
+		.then(appFromDB => {
+			res.render('nutrition/nutritionEdit', { app: appFromDB })
+		})
+		.catch(err => next(err))
 });
 
-router.post("/nutrition/edit/:id", (req, res, next) => {
-  const { imageUrl, name, description, type, rating } = req.body;
-  AppDescription.findByIdAndUpdate(req.params.id, {
-    imageUrl,
-    name,
-    description,
-    type,
-    rating,
-  })
-    .then(() => {
-      res.redirect(`/nutrition/create`);
-      //${req.params.id}
-    })
-    .catch((err) => next(err));
-});
+
+
+router.post('/nutrition/edit/:id', isLoggedIn, (req, res, next) => {
+	const { imageUrl, name, description, type, rating} = req.body
+	AppDescription
+	.findByIdAndUpdate(req.params.id, {
+		imageUrl,
+		name,
+		description, 
+		type, 
+		rating,
+	})
+		.then(() => {
+			res.redirect(`/nutrition/create`) 
+			//${req.params.id}
+		})
+		.catch(err => next(err))
+})
 
 router.get("/nutrition", (req, res, next) => {
   // const queryAllApps = req.query.q
