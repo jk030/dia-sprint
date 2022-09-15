@@ -32,6 +32,8 @@ router.get("/profile",isLoggedIn, (req,res,next) => {
 })
 })
 
+// get route find review by username 
+
 router.get("/profile/edit", isLoggedIn, (req,res,next) => {
   const {username,_id  } = req.session.user
 

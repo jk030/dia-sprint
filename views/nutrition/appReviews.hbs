@@ -1,0 +1,20 @@
+<h1>See reviews of community!</h1>
+
+<h2>Add a review 🦉</h2>
+{{!--  beispiel:
+{{#if book.reviews}}
+	{{#each book.reviews}}
+		<div>
+			<p>{{text}}</p>
+			<p>Added by: {{user}}</p>
+		</div>
+	{{/each}}
+{{/if}} --}}
+
+<div>hey {{userFromDB.username}}, leave a review:</div> 
+<form action="/nutrition/appReviews/{{appFromDB._id}}" method="POST">
+	
+	<label for="">Text: </label>
+	<input type="text" name="text">	
+	<button type="submit">Add this review</button>
+</form>
