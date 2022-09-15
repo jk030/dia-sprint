@@ -1,36 +1,17 @@
-<nav>
-        <div id="Status">
-          {{#if user}}
-          <h2>{{user.username}} You are logged in </h2>
-          <button>
-          <a href="/profile">See your profile</a>
-          </button>
-          <button>
-          <a href="/auth/logout">logout </a>
-          </button>
-
-          {{else}}
-              <button>
-              <a href="/auth/login">log in here</a>
-              </button>
-
-              <button>
-              <a href="/auth/signup">Sign up here</a>
-              </button>
-          {{/if}}
-
-            <button>
-              <a href="/nutrition">User recommended Apps</a>
-              </button>
-
-        </div>
-</nav>
-
-<h1>{{appTitle}} 🚀</h1>
-<p></p>
 
 
 
+<section class="section1-style">
+  <h1 class="Welcome"> Welcome to DIA! </h1>
+
+<h2 class="intro"> Your place to connect with people living with diabetes around the world! Share and learn all about diabetes & find your supportiv community! </h2>
+
+     
+     <button class="welcomeButton" ><a href="/nutrition"> &#10150 See what your coummunity recommends</a></button>
+
+</section>
+
+<div class="imageHealth"> </div>
         {{!-- <a href="/beers"> Beers  </a> &nbsp;
         <a href="/random-beer"> Random Beer  </a> --}}
 

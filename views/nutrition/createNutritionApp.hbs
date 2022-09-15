@@ -3,6 +3,7 @@
     <h1>Share your tool with the community:</h1>
 </section>
 
+<div class="imageHealth"> 
 
 <div class="createNewApp">
 <form action="/nutrition/create" method="POST" enctype="multipart/form-data">
@@ -10,7 +11,7 @@
 	<input type="text" name="name" required>
     {{#if message}}
 		<p>{{message}}</p>
-        <a href="/nutrition">See what else your community recommended</a>
+        <a href="/nutrition"> &#10150 See what your community recommends!</a>
 	{{/if}}
     
     <label class="label"  for="">Image: </label>
@@ -31,9 +32,12 @@
 
         </p> 
 
-	<button type="submit">Add this App</button>
+	<button class="buttonSubmit" type="submit">Add this App</button>
 </form>
+
+
 </div>
+
 
 
         <script> 
@@ -66,6 +70,7 @@
                         })
                     {{!-- wie bekomme ich die Sterne Bewertung jetzt auf die anderen views? --}}  
         </script>
+
 
 
 

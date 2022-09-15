@@ -15,6 +15,11 @@ body {
   text-decoration: underline;
 }
 
+.loggedIn{
+  margin-left: 500px;
+  margin-bottom: 30px ;
+}
+
 .navbar{
   float: left;
   display: block;
@@ -51,6 +56,65 @@ body {
   letter-spacing: 5px; 
 }
 
+.section1-style{
+  height: 600px;
+  margin-left: 80px;
+  margin-right: 93px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  font-size: 15px;
+  background-color: rgba(232,217,217,.3);
+}
+.Welcome{
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 2em; 
+  padding: 0em;
+  margin: 6px 6px 6px 6px;
+}
+
+.welcomeButton{
+  float: left;
+  display: block;
+  background-color: #DADED4;
+  text-align: center;
+  padding: 10px 100px;
+  margin-top: 40px;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+.welcomeButton a {
+  float: left;
+  display: block;
+  color:#FFFFFF;
+  text-align: center;
+  font-weight: 500;
+  padding: 14px 10px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+
+.welcomeButton a:hover {
+  background-color: #A3BCB6;
+  color: #344648;
+}
+
+.intro{
+  font-size: 25px;
+  line-height: 1.5em; 
+  padding: 0em;
+  margin: 6px 6px 6px 6px;
+	text-align: center; 
+  width: 700px;
+}
 .createNewApp{
   padding: 100px;
   margin-left: 400px;
@@ -63,12 +127,58 @@ body {
   display: block;
   font-weight: 500;
   color: #344648;
+ 
 }
-
 .inputLongText{
   width: 400px;
   height:150px;
 }
+
+.imageHealth{
+  background-position: right, left;
+  background-image: url("/images/people-eating-healthy-exercising-regularly_53876-64671-removebg-preview.png"), url("/images/tiny-employees-sitting-standing-huge-hands_74855-17900-removebg-preview.png");
+  background-repeat: no-repeat;
+  background-size: 350px;
+}
+
+.buttonSubmit{
+  background-color: #DADED4;
+  border-radius: 6px; 
+  border-color: #344648;
+}
+
+
+.addNewApp{
+  padding: 100px;
+  margin-left: 400px;
+  justify-content: center;
+  align-content: center;
+  height: 500px;
+  width: 340px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 80px 50px 30px 50px;
+  padding: 50px 10px 50px 50px;
+  background-color:  rgba(232,217,217,.3);
+}
+
+.addNewAppText{
+    font-size: 15px;
+    color: #344648; 
+    justify-content: space-around;
+    display: column;
+    padding: 30px;
+    margin: 50px;
+  }
+
+.whatNext{
+  display: block;
+  text-align: right;
+  transform: translate(-10%, -700%);
+  justify-content: space-around;
+}
+
 h1 {
 text-align: center;
 font-weight: 500;
@@ -132,7 +242,7 @@ h8{
   flex-direction: column;
   margin: 80px 50px 30px 50px;
   padding: 50px 10px 50px 50px;
-  background-color: rgba(226,194,179);
+  background-color: rgba(232,217,217,.3);
 }
 
 .nutritionReviews{
