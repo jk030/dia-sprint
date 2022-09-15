@@ -22,13 +22,17 @@
 
 <form action="/nutrition/create" method="POST" enctype="multipart/form-data">
 	<label for="">Name: </label>
-	<input type="text" name="name">
+	<input type="text" name="name" required>
+    {{#if message}}
+		<p>{{message}}</p>
+        <a href="/nutrition">See what else your community recommended</a>
+	{{/if}}
 
     <label for="">Image: </label>
-    <input type="file" name="appImage">
+    <input type="file" name="appImage" required>
 
 	<label for="">Description: </label>
-	<input type="text" name="description">
+	<input type="text" name="description" required>
 
 
          <h2>Rating:</h2> 
@@ -44,6 +48,15 @@
 
 	<button type="submit">Add this App</button>
 </form>
+
+
+  <section class="">
+        <a class="navigationBottom" href="/"> &#10150 Go back to start</a>
+        <a class="navigationBottom" href="/profile"> &#10150 Go to your Profile</a>
+        <a class="navigationBottom" href="/nutrition"> &#10150 See what your coummunity recommends</a>
+   </section>
+
+
 
         <script> 
              document.addEventListener('DOMContentLoaded', function(){

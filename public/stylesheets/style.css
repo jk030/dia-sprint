@@ -1,6 +1,9 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #E2C2B3;
+
 }
 
 a {
@@ -8,12 +11,37 @@ a {
 }
 
 h1 {
-  color: 15px;
+font-weight: 500;
+font-size: 50px;
+color: #344648;
+justify-content: center;
+align-items: center;
+display: flex;
+}
+
+h2{
+  color: #E2C2B3;
+  font-weight: 500;
+}
+
+h4{
+  color: #FBE0C3;
+  font-weight: 500;
+}
+
+h6{
+  color: #FBE0C3;
+  font-weight: 500;
+}
+
+h8{
+  color: #FBE0C3;
+  font-weight: 500;
 }
 
 .star-rating{
   color: #bebebe;
-  font-size:2em;
+  font-size:1.5em;
 }
 
 .my-star::before{
@@ -32,8 +60,44 @@ h1 {
   color: #fb8900;
 }
 
+.nutritionOverview{
+  flex-direction: row;
+}
+.appModule {
+  float: left;
+  height: 500px;
+  width: 340px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 80px 50px 30px 50px;
+  padding: 50px 10px 50px 50px;
+  background-color: rgba(64,50,52,0.8);
+}
 
+.appDescription{
+  font-size: 10px;
+  color: #FBE0C3;
+}
 
+/* .navigationBottom{
+  height: 200px;
+  position: relative;
+  border: 3px solid rgba(64,50,52,0.8); 
+  color: #FBE0C3;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+} */
+
+.navigationCenter{
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  justify-content: space-between;
+  float: left;
+}
 
 /* *{
   margin: 0;

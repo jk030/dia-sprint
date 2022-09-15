@@ -1,0 +1,84 @@
+<nav>
+        <div id="Status">
+          {{#if user}}
+          <h2>{{user.username}} You are logged in </h2>
+          <button>
+          <a href="/profile">See your profile</a>
+          </button>
+          <button>
+          <a href="/auth/logout">logout </a>
+          </button>
+
+          {{else}}
+              <button>
+              <a href="/auth/login">log in here</a>
+              </button>
+
+              <button>
+              <a href="/auth/signup">Sign up here</a>
+              </button>
+          {{/if}}
+
+            <button>
+              <a href="/nutrition/create">create your own post </a>
+              </button>
+
+        </div>
+</nav>
+
+<h1>What your community recommends:</h1>
+
+{{#each allAppsFromDB}}
+
+<section class="nutritionOverview">
+    <div class="appModule">
+            <h6>Name: {{name}}</h6>
+            <img src="{{imageUrl}}" alt="Image for {{title}}"height="200px" width="200px"></img>
+            <h6>Description:</h6>
+	        <artical class="appDescription">{{description}}</artical>
+
+
+             <h6>Rating:</h6>
+            <p class="star-rating">
+                <span class="my-star star-1" data-star="1"></span>
+                <span class="my-star star-2" data-star="2"></span>
+                <span class="my-star star-3" data-star="3"></span>
+                <span class="my-star star-4" data-star="4"></span>
+                <span class="my-star star-5" data-star="5"></span>
+                <input type="hidden" name="rating" readonly id="output">
+            </p> 
+    </div>
+  
+    {{!-- <h6>{{owner}}</h6> --}}
+    {{!-- <h6>{{timestamps}}</h6> --}}	
+
+</section>
+
+{{/each}}
+
+
+    <div class="navigationBottom">
+       <div class="navigationCenter"> <button><a href="/"> &#10150 Go back to start</a></button> </div>
+       <div class="navigationCenter"> <button><a href="/profile"> &#10150 Go to your Profile</a></button></div>
+        <div class="navigationCenter"> <button><a href="/nutrition/create"> &#10150 Share what help you!</a></button></div>
+    </div>
+
+
+
+
+        <script>   
+            JSON.stringify(allAppsFromDB)  
+            {{{allAppsFromDB}}}.forEach(app => { 
+                console.log('thats the app:' app)
+                (let i = 1; i <= 5; i++) {
+                if(i <= app.rating) {
+                  document.querySelector('.star-'+ (i)).classList.add('is-active')
+                }
+            }
+        })
+
+        </script>
+    
+
+
+ 
