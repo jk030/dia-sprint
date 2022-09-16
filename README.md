@@ -17,6 +17,10 @@ Whant to share what helped you? Easy, just click on ceate and add the tool that 
 
 <img width="1341" alt="image" src="https://user-images.githubusercontent.com/110614269/190599592-41fd210c-963f-499b-8fcd-9d55328d95ed.png">
 
+Check if everything is ready to publish! --> if not, just click "click to edit" and update your post!
+
+<img width="1337" alt="image" src="https://user-images.githubusercontent.com/110614269/190603987-feb2e980-fe52-46a3-89c2-574424f88621.png">
+
 Don't want to share a tool? Don't worry, you can discover all the apps our community recommends by clicking on the "See what your community recommends" section. Leave a comment and share your thoughts! 
 
 
