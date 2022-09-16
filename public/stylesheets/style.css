@@ -15,21 +15,92 @@ body {
   text-decoration: underline;
 }
 
+
+.w3-top {
+  top: 0;
+}
+
+.w3-top {
+  position: fixed;
+  width: 93%;
+  z-index: 5;
+}
+
+.w3-padding {
+  padding: 3px 14px!important;
+}
+
+.w3-white, .w3-hover-white:hover {
+  background-color: #fff!important;
+}
+
+.w3-card{
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.w3-bar {
+  width: 100%;
+  overflow: hidden;
+}
+
+.w3-wide {
+  letter-spacing: 4px;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+div {
+  display: block;
+}
+
+
+.w3-bar .w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+  color: #344648;
+
+}
+
+
+.w3-right {
+  float: right!important;
+}
+
+/*  */
 .loggedIn{
   margin-left: 500px;
   margin-bottom: 30px ;
 }
 
-.navbar{
-  float: left;
-  display: block;
-  background-color: #DADED4;
-  text-align: center;
-  padding: 14px 200px;
-  margin-left: 80px;
-  text-decoration: none;
+/* bottom nav */
+
+.w3-padding-16 {
+  padding-top: 20px!important;
+  padding-bottom: 100px!important;
 }
-/* Style the links inside the navigation bar */
+
+.w3-center {
+  text-align: center!important;
+}
+
+.w3-green{
+  background-color: #DADED4!important;
+
+}
+
+.w3-bottom {
+  position: fixed;
+  bottom: -110;
+  width: 92%;
+  z-index: 1;
+}
+
 .navbar a {
   float: left;
   display: block;

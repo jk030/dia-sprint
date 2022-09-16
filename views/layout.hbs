@@ -13,13 +13,37 @@
   </head>
 
 <header>
-<nav>
+
+<div class="w3-top">
+<div class="w3-bar w3-white w3-wide w3-padding w3-card">
+
+    <a href="/" class="w3-bar-item w3-button">
+    <b>DIA</b>
+    ❤️</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+       {{#if user}} 
+        {{!-- <h6 class="loggedIn">{{user.username}} You are logged in </h6>   --}}
+         <a href="/profile" class="w3-bar-item w3-button">Profile</a>
+      <a href="/auth/logout" class="w3-bar-item w3-button">Logout</a>
+       {{else}}
+      <a href="/auth/login" class="w3-bar-item w3-button">Login</a>
+      <a href="/auth/signup" class="w3-bar-item w3-button">Sign up</a>
+       {{/if}}
+      <a href="/nutrition/create" class="w3-bar-item w3-button">Create your own post</a>
+    </div>
+    
+  </div>
+ </div> 
+
+{{!-- 
+ <nav>
     <div id="Status">
     <ul>
         {{#if user}} 
         <h6 class="loggedIn">{{user.username}} You are logged in </h6>        
         <span><a class="navTop" href="/profile">Profile</a></span>
-         <span><a class="navTop" href="/auth/logout">logout </a></span>
+         <span><a class="navTop" href="/auth/logout">Logout </a></span>
         {{else}}
          <span><a class="navTop"  href="/auth/login">Login</a></span>
         <span><a class="navTop" href="/auth/signup">Sign up</a></span> 
@@ -28,7 +52,7 @@
     </ul>
   
     </div>
-</nav>
+</nav> --}}
 </header>
 
   <body>
@@ -41,12 +65,15 @@
 
 
 
-<div class="navbar">
+
+<footer class="w3-padding-16 w3-bottom ">
+<div class="navbar w3-green w3-card">
         <a href="/" class="active"> &#10150 Go back to start</a>
         <a href="/profile"> &#10150 Go to your Profile</a>
         <a href="/nutrition"> &#10150 See what your coummunity recommends</a>
 </div>
-
+</footer>
+</div>
 
   </body>
 
