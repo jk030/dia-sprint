@@ -10,9 +10,15 @@ If you want to enjoy DIA to the fullest, just create an account, login and start
 
 In your profile, you can see your latest contributions, add some personal information and save tools that your interested in. 
 
+
 Whant to share what helped you? Easy, just click on ceate and add the tool that you want to share with the community. 
 
+<img width="1345" alt="image" src="https://user-images.githubusercontent.com/110614269/190599424-aab73410-2a3b-4e71-944b-8739906ed568.png">
+
+<img width="1341" alt="image" src="https://user-images.githubusercontent.com/110614269/190599592-41fd210c-963f-499b-8fcd-9d55328d95ed.png">
+
 Don't want to share a tool? Don't worry, you can discover all the apps our community recommends by clicking on the "See what your community recommends" section. Leave a comment and share your thoughts! 
+
 
 
 
